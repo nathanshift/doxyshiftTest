@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Doxygen Action ref  
-        uses: nathanshift/doxyshift@v1
+        uses: nathanshift/doxyshift@main
         with:
           pathTo-doxyfile: ./Doxyfile
           working-directory: .
