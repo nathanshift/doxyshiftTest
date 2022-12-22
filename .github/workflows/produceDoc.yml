@@ -1,0 +1,17 @@
+name: 'single repo action test'
+
+on: [workflow_dispatch]
+  
+
+jobs:
+  Build-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out repo
+        uses: actions/checkout@v3
+
+      - name: Doxygen Action ref  
+        uses: nathanshift/doxyshift@v0
+        with:
+          pathTo-doxyfile: ./Doxyfile
+          working-directory: .
