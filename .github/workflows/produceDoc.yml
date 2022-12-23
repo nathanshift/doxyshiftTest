@@ -9,14 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.0
+    defaults:
+      run:
+        working-directory: /
     steps:
       - name: check out repo
         uses: actions/checkout@v3
 
       - name: See inside my image
-        working-directory: ./app
+        
         run: |
-          
+          cd ../app
           echo "I am here"
           ls
           dotnet DockerIt.dll
