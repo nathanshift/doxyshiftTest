@@ -22,7 +22,8 @@ jobs:
         
         run: |
           cd ../app
-          doxygen
+          ls
+          
           
           
 
