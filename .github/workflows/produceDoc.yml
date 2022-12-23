@@ -13,8 +13,6 @@ jobs:
       - name: check out repo
         uses: actions/checkout@v3
 
-      - name: Doxygen Action ref  
-        uses: nathanshift/doxyshift@main
-        with:
-          pathTo-doxyfile: ./Doxyfile
-          working-directory: .
+      - name: See inside my image
+        run: ls  
+        
