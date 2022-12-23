@@ -5,7 +5,10 @@ on: [workflow_dispatch]
 
 jobs:
   Build-doc:
+    name: Build tool
     runs-on: ubuntu-latest
+    container:
+      image: docker://ghcr.io/nathanshift/runthedoc:v0.0
     steps:
       - name: check out repo
         uses: actions/checkout@v3
