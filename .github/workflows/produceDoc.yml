@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.0
-       volumes:
+      volumes:
          - ${{ github.workspace }}:/app
     defaults:
       run:
