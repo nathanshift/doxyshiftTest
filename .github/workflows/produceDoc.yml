@@ -22,7 +22,6 @@ jobs:
         
         run: |
           cd ..
-          cd app/
           ls
           
           
