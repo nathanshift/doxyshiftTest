@@ -11,9 +11,9 @@ jobs:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.0
       volumes:
         - ${{ github.workspace }}:/app
-    defaults:
-      run:
-        working-directory: /
+    # defaults:
+    #   run:
+    #     working-directory: /
     steps:
       - name: check out repo
         uses: actions/checkout@v3
