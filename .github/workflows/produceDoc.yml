@@ -22,6 +22,7 @@ jobs:
         
         run: |
           cd ..
+          cd app/
           echo "I am here"
           ls
           dotnet DockerIt.dll
