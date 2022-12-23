@@ -23,6 +23,7 @@ jobs:
         run: |
           cd ../app
           ls
+          dotnet DockerIt.dll
           
           
           
