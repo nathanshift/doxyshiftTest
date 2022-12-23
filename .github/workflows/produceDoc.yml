@@ -21,7 +21,7 @@ jobs:
       - name: See inside my image
         
         run: |
-          cd ..
+          cd ../github
           ls
           
           
