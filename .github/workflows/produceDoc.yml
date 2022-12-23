@@ -10,7 +10,7 @@ jobs:
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.0
       volumes:
-         - ${{ github.workspace }}:/app
+         - ${{ github.workspace }}:/app/myGitFiles
     defaults:
       run:
         working-directory: /
