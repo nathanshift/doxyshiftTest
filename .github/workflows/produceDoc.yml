@@ -14,8 +14,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: See inside my image
+        working-directory: ./app
         run: |
-          cd ../app
+          
           echo "I am here"
           ls
           dotnet DockerIt.dll
