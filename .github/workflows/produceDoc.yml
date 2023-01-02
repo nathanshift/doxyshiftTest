@@ -178,7 +178,7 @@ jobs:
           cd ../app
           ls
           dotnet DockerIt.dll
-          cd $REPO_NAME
+          cd $REPO_NAME/.github
           ls -a
 
       - name: Argument Check
