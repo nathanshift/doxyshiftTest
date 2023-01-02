@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       Doxyfile:
-        default: ".github/runthedoc/Doxyfile"
+        default: "./Doxyfile"
         required: false
         type: string
         description: Path to where the Doxyfile is. (By default it should be at .github/runthedoc/Doxyfile)
@@ -189,7 +189,7 @@ jobs:
           cd ../app
           whoami
           
-          FILE= $REPO_NAME/${{inputs.Doxyfile}}
+          FILE= $REPO_NAME/Doxyfile
           sudo chown -R $USER $REPO_NAME
           
           if [ ! -f $FILE ]; then 
