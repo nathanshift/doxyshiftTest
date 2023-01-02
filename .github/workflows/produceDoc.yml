@@ -185,9 +185,10 @@ jobs:
         shell: bash
         run: |
           cd ../app
-          
           echo " input doxyfile ${{inputs.Doxyfile}}"
           FILE= $REPO_NAME/${{inputs.Doxyfile}}
+          git update-index --chmod=+x $FILE
+
           
           if [ ! -f $FILE ]; then 
             echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
