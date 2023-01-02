@@ -187,6 +187,7 @@ jobs:
           cd ../app
           echo " input doxyfile ${{inputs.Doxyfile}}"
           FILE= $REPO_NAME/${{inputs.Doxyfile}}
+          git update-index --chmod=+x $REPO_NAME
           sudo chmod +x  $FILE
 
           
