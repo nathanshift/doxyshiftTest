@@ -189,8 +189,12 @@ jobs:
           cd ../app
           whoami
           ls -a
+          if [-f doxyshift/Doxyfile];then
+            echo "alright"
+          fi
           cd doxyshift
           ls -a
+
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
