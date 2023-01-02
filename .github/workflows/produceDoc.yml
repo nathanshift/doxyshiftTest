@@ -29,6 +29,8 @@ on:
         required: false 
         type: string
 
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
 
 
 jobs:
@@ -51,7 +53,7 @@ jobs:
           cd ../app
           ls
           dotnet DockerIt.dll
-          cd myGitFiles
+          cd $REPO_NAME
           ls -a
 
       - name: Argument Check
