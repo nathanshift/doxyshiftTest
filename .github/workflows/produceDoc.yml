@@ -170,8 +170,7 @@ jobs:
     defaults:
       run:
         working-directory: /
-    permissions:
-      contents: read
+    
     steps:
       - name: check out repo
         uses: actions/checkout@v3
