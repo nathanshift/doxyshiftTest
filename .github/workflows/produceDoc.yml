@@ -190,6 +190,7 @@ jobs:
           whoami
           ls -a
           cd doxyshift
+          ls -a
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
