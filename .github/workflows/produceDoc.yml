@@ -186,6 +186,7 @@ jobs:
         shell: bash
         run: |
           cd ../app
+          apt install sudo
           sudo chmod -R 755 $REPO_NAME/.github/
           echo " input doxyfile ${{inputs.Doxyfile}}"
           FILE= $REPO_NAME/${{inputs.Doxyfile}}
