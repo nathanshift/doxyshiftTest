@@ -185,7 +185,7 @@ jobs:
 
       - name: Argument Check
         shell: bash
-        run: ./github/scripts/generateDoc.sh
+        run: ./.github/scripts/generateDoc.sh
           
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
