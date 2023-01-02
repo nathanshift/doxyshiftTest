@@ -41,7 +41,7 @@ jobs:
           ls
           dotnet DockerIt.dll
           cd myGitFiles
-          ls
+          ls -a
 
       - name: Argument Check
         shell: bash
