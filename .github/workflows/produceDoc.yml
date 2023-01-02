@@ -189,7 +189,7 @@ jobs:
           cd ../app
           whoami
           ls -a
-          if [-f doxyshift/Doxyfile];then
+          if [ -f doxyshift/Doxyfile ];then
             echo "alright"
           fi
           cd doxyshift
