@@ -46,7 +46,7 @@ jobs:
       - name: Argument Check
         shell: bash
         run: |
-          echo ${{github.event.inputs.Doxyfile}}
+          echo ${{inputs.Doxyfile}}
           if [ ! -f ${{ github.event.inputs.Doxyfile }} ]; then echo " ${{ github.event.inputs.Doxyfile }} does not exist. " exit 1
       - name: Produce html
         run: doxygen ${{ github.event.inputs.Doxyfile}}
