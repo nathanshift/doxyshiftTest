@@ -4,12 +4,13 @@ on:
   workflow_call:
     inputs:
       Doxyfile:
-        default: "./github/workflows/Gendoc/Doxyfile"
-        required: true
+        default: "./github/runthedoc/Doxyfile"
+        required: false
         type: string
-        description: Path to where the Doxyfile is. (By default it should be at .github/gendoc/Doxyfile)
+        description: Path to where the Doxyfile is. (By default it should be at .github/runthedoc/Doxyfile)
       
       Parent-page-name:
+        default: ${{ github.event.repository.name }}
         required: false
         type: string
         description: Optional name for the parent page under which the documentation will leave. (By default the current repository name will be used)
