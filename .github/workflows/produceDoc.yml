@@ -1,6 +1,20 @@
 name: 'single repo action test'
 
-on: [workflow_dispatch]
+on: 
+  [workflow_dispatch]:
+    inputs:
+      Doxyfile:
+        required: true
+        description: Path to where the Doxyfile is. (By default it should be at .github/gendoc/Doxyfile)
+      
+      Parent-page:
+        required: false
+        description: Optional name for the parent page under which the documentation will leave. (By default the current repository name will be used)
+      
+      Parent-page-description:
+        required: false
+        description: Parent page description for what the documentation for the current repository is all about.
+
   
 
 jobs:
@@ -19,12 +33,19 @@ jobs:
         uses: actions/checkout@v3
 
       - name: See inside my image
-        
         run: |
           cd ../app
           ls
           dotnet DockerIt.dll
-          
+
+      - name: Argument Check
+        run: |
+          if [ ! -f ${{ github.event.inputs.Doxyfile }} ]; then echo " ${{ github.event.inputs.Doxyfile }} does not exist. " exit 1
+      - name: Produce html
+        run: doxygen ${{ github.event.inputs.Doxyfile
+
+      # - name: Run Parser for Confluence
+      #   run:   
           
           
 
