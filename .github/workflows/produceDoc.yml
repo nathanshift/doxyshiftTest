@@ -190,11 +190,6 @@ jobs:
           whoami
           ls -a
           
-          FILE= $REPO_NAME/Doxyfile
-          cd $FILE
-          ls -a
-          
-          
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
