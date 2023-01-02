@@ -163,7 +163,7 @@ jobs:
     name: Build tool
     runs-on: ubuntu-latest
     container:
-      image: docker://ghcr.io/nathanshift/runthedoc:v0.0
+      image: docker://ghcr.io/nathanshift/runthedoc:v0.2
       options: --user root
       volumes:
          - ${{ github.workspace }}:/app/${{ github.event.repository.name }}
