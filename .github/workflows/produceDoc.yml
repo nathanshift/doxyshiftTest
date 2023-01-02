@@ -40,6 +40,8 @@ jobs:
           cd ../app
           ls
           dotnet DockerIt.dll
+          cd /myGitFiles
+          ls
 
       - name: Argument Check
         shell: bash
