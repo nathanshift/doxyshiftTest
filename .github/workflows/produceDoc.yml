@@ -187,7 +187,7 @@ jobs:
           cd ../app
           echo " input doxyfile ${{inputs.Doxyfile}}"
           FILE= $REPO_NAME/${{inputs.Doxyfile}}
-          git update-index --chmod=+x $FILE
+          chmod 744 $FILE
 
           
           if [ ! -f $FILE ]; then 
