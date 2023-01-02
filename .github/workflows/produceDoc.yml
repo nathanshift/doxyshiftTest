@@ -45,7 +45,7 @@ jobs:
         run: |
           if [ ! -f ${{ github.event.inputs.Doxyfile }} ]; then echo " ${{ github.event.inputs.Doxyfile }} does not exist. " exit 1
       - name: Produce html
-        run: doxygen ${{ github.event.inputs.Doxyfile
+        run: doxygen ${{ github.event.inputs.Doxyfile}}
 
       # - name: Run Parser for Confluence
       #   run:   
