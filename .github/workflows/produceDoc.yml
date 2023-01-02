@@ -185,7 +185,7 @@ jobs:
         shell: bash
         run: |
           echo ${{inputs.Doxyfile}}
-          FILE=/$REPO_NAME/${{inputs.Doxyfile}}
+          FILE= $REPO_NAME/${{inputs.Doxyfile}}
           echo "file is $FILE"
           echo "output for doxygen is ${{ inputs.OUTPUT_DIRECTORY }}"
           if [ ! -f $FILE ]; then 
