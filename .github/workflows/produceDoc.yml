@@ -186,7 +186,7 @@ jobs:
         run: |
           echo $REPO_NAME
           echo ${{inputs.Doxyfile}}
-          FILE= /$REPO_NAME/${{inputs.Doxyfile}}
+          FILE= ./$REPO_NAME/${{inputs.Doxyfile}}
           cd FILE
           ls -a
           echo "file is $FILE"
