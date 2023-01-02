@@ -188,11 +188,12 @@ jobs:
         run: |
           cd ../app
           whoami
+          ls -a
           
           FILE= $REPO_NAME/Doxyfile
           cd $FILE
           ls -a
-          sudo chown -R $USER $REPO_NAME
+          
           
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
