@@ -142,7 +142,8 @@ on:
                       code but in a separate folder and entities.This is redundant since page generated are linked to Github directly.	
                       The default value is: NO.'
         required: true
-        default: string
+        default: 'NO'
+        type: string
       
       GENERATE_LATEX:
         description: 'If the GENERATE_LATEX tag is set to YES, LaTeX documetation will be generated.	
