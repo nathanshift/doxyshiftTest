@@ -164,7 +164,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.2
-      options: --user root
+      options: --user docker
       volumes:
          - ${{ github.workspace }}:/app/${{ github.event.repository.name }}
     defaults:
