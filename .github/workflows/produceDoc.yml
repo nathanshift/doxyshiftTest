@@ -184,6 +184,7 @@ jobs:
       - name: Argument Check
         shell: bash
         run: |
+          echo $REPO_NAME
           echo ${{inputs.Doxyfile}}
           FILE= /$REPO_NAME/${{inputs.Doxyfile}}
           cd FILE
