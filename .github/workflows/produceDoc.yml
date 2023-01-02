@@ -20,7 +20,6 @@ on:
         type: string
         description: Parent page description for what the documentation for the current repository is all about.
 
-  
 
 jobs:
   Build-doc:
@@ -53,7 +52,10 @@ jobs:
           echo $FILE
           if [ ! -f $FILE ]; then 
             echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
-            exit 1 
+            echo "Creating Default Doxyfile with provided or default settings."
+            doxygen -g Doxyfile
+            cat Doxyfile
+            #exit 1 
           else
             echo "Found ${FILE}!"
           fi
