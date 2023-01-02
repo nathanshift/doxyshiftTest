@@ -4,6 +4,7 @@ on:
   workflow_call:
     inputs:
       Doxyfile:
+        default: "./github/workflows/Gendoc/Doxyfile"
         required: true
         type: string
         description: Path to where the Doxyfile is. (By default it should be at .github/gendoc/Doxyfile)
@@ -50,8 +51,10 @@ jobs:
           FILE=/myGitFiles/${{inputs.Doxyfile}}
           echo $FILE
           if [ ! -f $FILE ]; then 
-            echo "the provided path ${{ inputs.Doxyfile }} does not exist. " 
+            echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
             exit 1 
+          else
+            echo "Found ${FILE}!"
           fi
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
