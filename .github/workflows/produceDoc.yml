@@ -184,6 +184,7 @@ jobs:
       - name: Argument Check
         shell: bash
         run: |
+          cd ../app
           cd $REPO_NAME/.github/runthedoc
           ls -a
           echo $REPO_NAME
