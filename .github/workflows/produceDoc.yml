@@ -7,12 +7,14 @@ on:
         required: true
         description: Path to where the Doxyfile is. (By default it should be at .github/gendoc/Doxyfile)
       
-      Parent-page:
+      Parent-page-name:
         required: false
+        type: string
         description: Optional name for the parent page under which the documentation will leave. (By default the current repository name will be used)
       
       Parent-page-description:
         required: false
+        type: string
         description: Parent page description for what the documentation for the current repository is all about.
 
   
@@ -39,6 +41,7 @@ jobs:
           dotnet DockerIt.dll
 
       - name: Argument Check
+        shell: bash
         run: |
           if [ ! -f ${{ github.event.inputs.Doxyfile }} ]; then echo " ${{ github.event.inputs.Doxyfile }} does not exist. " exit 1
       - name: Produce html
