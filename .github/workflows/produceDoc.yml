@@ -8,17 +8,27 @@ on:
         required: false
         type: string
         description: Path to where the Doxyfile is. (By default it should be at .github/runthedoc/Doxyfile)
-      
       Parent-page-name:
         default: ${{ github.event.repository.name }}
         required: false
         type: string
         description: Optional name for the parent page under which the documentation will leave. (By default the current repository name will be used)
-      
       Parent-page-description:
         required: false
         type: string
         description: Parent page description for what the documentation for the current repository is all about.
+      
+      PROJECT_NAME:
+        description: 'Name of the project. Can be the same as Parent-page-name'
+        required: false
+        default: ${{ github.event.repository.name }} 
+        type: string
+      OUTPUT_DIRECTORY:
+        default: ./myGitFiles/
+        description: 'Test scenario tags'
+        required: true 
+        type: string
+
 
 
 jobs:
@@ -28,7 +38,7 @@ jobs:
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.0
       volumes:
-         - ${{ github.workspace }}:/app/myGitFiles
+         - ${{ github.workspace }}:/app/${{ github.event.repository.name }}
     defaults:
       run:
         working-directory: /
@@ -54,7 +64,7 @@ jobs:
             echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
             echo "Creating Default Doxyfile with provided or default settings."
             doxygen -g Doxyfile
-            cat Doxyfile
+            
             #exit 1 
           else
             echo "Found ${FILE}!"
