@@ -189,8 +189,8 @@ jobs:
           cd ../app
           whoami
           
-          FILE= $REPO_NAME/${{inputs.Doxyfile}}
-          sudo chmod -R 755 $FILE
+          FILE= $REPO_NAME
+          
           if [ ! -f $FILE ]; then 
             echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
             echo "Creating Default Doxyfile with provided or default settings."
