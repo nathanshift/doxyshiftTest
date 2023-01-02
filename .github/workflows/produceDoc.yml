@@ -164,7 +164,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.2
-      options: --user root
+      options: --user docker
       volumes:
          - ${{ github.workspace }}:/app/${{ github.event.repository.name }}
     defaults:
@@ -185,8 +185,23 @@ jobs:
 
       - name: Argument Check
         shell: bash
-        run: ./.github/scripts/generateDoc.sh
+        run: |
+          cd ../app
+          whoami
           
+          FILE= $REPO_NAME/${{inputs.Doxyfile}}
+          chmod 777 $REPO_NAME
+          if [ ! -f $FILE ]; then 
+            echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
+            echo "Creating Default Doxyfile with provided or default settings."
+            doxygen -g Doxyfile
+            
+            #exit 1 
+          else
+               echo "Found ${FILE}!"
+           fi
+
+       
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
