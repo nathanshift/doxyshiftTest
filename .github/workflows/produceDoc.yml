@@ -47,7 +47,8 @@ jobs:
         shell: bash
         run: |
           echo ${{inputs.Doxyfile}}
-          if [ ! -f ${{ inputs.Doxyfile }} ]; then echo " ${{ inputs.Doxyfile }} does not exist. " exit 1
+          FILE=/myGitFiles/${{inputs.Doxyfile}}
+          if [ ! -f "$FILE" ]; then echo "the provided path ${{ inputs.Doxyfile }} does not exist. " exit 1
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
