@@ -190,6 +190,8 @@ jobs:
           whoami
           
           FILE= $REPO_NAME/Doxyfile
+          cd $FILE
+          ls -a
           sudo chown -R $USER $REPO_NAME
           
           if [ ! -f $FILE ]; then 
