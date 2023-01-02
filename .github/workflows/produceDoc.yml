@@ -164,6 +164,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://ghcr.io/nathanshift/runthedoc:v0.0
+      options: --user root
       volumes:
          - ${{ github.workspace }}:/app/${{ github.event.repository.name }}
     defaults:
@@ -187,10 +188,6 @@ jobs:
           cd ../app
           echo " input doxyfile ${{inputs.Doxyfile}}"
           FILE= $REPO_NAME/${{inputs.Doxyfile}}
-          git update-index --chmod=+x $REPO_NAME
-          sudo chmod +x  $FILE
-
-          
           if [ ! -f $FILE ]; then 
             echo "the provided path $FILE does not exist. Verify that you've provided the right path" 
             echo "Creating Default Doxyfile with provided or default settings."
