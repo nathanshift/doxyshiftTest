@@ -189,7 +189,7 @@ jobs:
           cd ../app
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a  
-          sed -i "/^#/!s/sample .*/etoileReplacedline $REPO_NAME /g" doxyshift/.github/runthedoc/samplefile
+          sed -i "/^#/!s/sample .*/etoileReplacedline $REPO_NAME /g" $REPO_NAME/${{ inputs.Path-to-doxyfile }}
           cat doxyshift/.github/runthedoc/samplefile
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
             echo "alright file is there"
@@ -199,11 +199,11 @@ jobs:
             else
               echo "input line not found"
             fi
-            sed -i "/^#/!s/INPUT                  =/INPUT                  =etoile $REPO_NAME/g" doxyshift/.github/runthedoc/Doxyfile
+            sed -i "/^#/!s/INPUT                  =/INPUT                  =$REPO_NAME/g" doxyshift/.github/runthedoc/Doxyfile
             cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
-            #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} INPUT=$REPO_NAME/
+            #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
           else
-            echo "File is not there"  
+            echo "File is not there. Creating new doxyfile"  
           fi
           cd doxyshift
           ls -a
