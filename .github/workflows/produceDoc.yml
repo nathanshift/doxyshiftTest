@@ -187,7 +187,7 @@ jobs:
         shell: bash
         run: |
           cd ../app
-          dotnet DockerIt.dll HiNathan
+          dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a  
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
             echo "alright file is there"
