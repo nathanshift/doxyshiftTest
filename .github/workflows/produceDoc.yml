@@ -190,7 +190,7 @@ jobs:
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
           echo $OUT_DIR
-          sed -i "/^#/!s/sample .*/etoileReplacedline ${OUT_DIR//\//\\/} /g" $REPO_NAME/.github/runthedoc/samplefile
+          #sed -i "/^#/!s/sample .*/etoileReplacedline ${OUT_DIR//\//\\/} /g" $REPO_NAME/.github/runthedoc/samplefile
           #sed -i "/^#/!s/sample .*/etoileReplacedline $OUT_DIR /g" $REPO_NAME/.github/runthedoc/samplefile
           cat doxyshift/.github/runthedoc/samplefile
 
@@ -212,7 +212,8 @@ jobs:
           else
             echo "File is not there. Creating new doxyfile"  
           fi
-          cd doxyshift
+          doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }}
+          cd $OUT_DIR
           ls -a
         shell: bash
         env:
