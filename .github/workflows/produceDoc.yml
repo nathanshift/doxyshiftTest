@@ -189,7 +189,7 @@ jobs:
           cd ../app
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
-          
+          echo $OUT_DIR
           sed -i "/^#/!s/sample .*/etoileReplacedline $OUT_DIR /g" $REPO_NAME/.github/runthedoc/samplefile
           cat doxyshift/.github/runthedoc/samplefile
 
