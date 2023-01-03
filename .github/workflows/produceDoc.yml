@@ -189,9 +189,7 @@ jobs:
           cd ../app
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
-          fichier = $REPO_NAME/${{ inputs.Path-to-doxyfile }}
-          echo "$fichier"
-          sed -i "/^#/!s/sample .*/etoileReplacedline $REPO_NAME /g" $fichier
+          sed -i "/^#/!s/sample .*/etoileReplacedline $REPO_NAME /g" $REPO_NAME/.github/runthedoc/samplefile
           cat doxyshift/.github/runthedoc/samplefile
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
             echo "alright file is there"
