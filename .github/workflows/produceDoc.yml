@@ -189,7 +189,7 @@ jobs:
           cd ../app
           whoami
           ls -a
-          FILE= $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
+          echo "$REPO_NAME/${{ inputs.Path-to-doxyfile }}" 
           if [ -f doxyshift/.github/runthedoc/Doxyfileb ];then
             echo "alright file is there"
           else
