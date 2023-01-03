@@ -210,14 +210,28 @@ jobs:
             cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
             #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
           else
-            echo "File is not there. Creating new doxyfile"  
+            echo "File is not there. Creating new doxyfile" 
+            doxygen -g Doxyfile
+
+            #setting doxyfile configuration
+            sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${OUT_DIR//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${PROJECT-NAME//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${OPTIMIZE-JAVA-OUTPUT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+
           fi
+
+
           doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }}
           cd $OUT_DIR
           ls -a
         shell: bash
         env:
           OUT_DIR: ${{ inputs.OUTPUT_DIRECTORY }}
+          PROJECT-NAME: ${{ inputs.PROJECT_NAME }}
+          OPTIMIZE-OUTPUT-JAVA: ${{ inputs.OPTIMIZE_OUTPUT_JAVA }}
+          AUTOLINK-SUPPORT: ${{ inputs.AUTOLINK_SUPPORT }}
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
