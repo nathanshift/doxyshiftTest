@@ -191,6 +191,7 @@ jobs:
           ls -a  
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
             echo "alright file is there"
+            cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
             doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }}
           else
             echo "File is not there"  
