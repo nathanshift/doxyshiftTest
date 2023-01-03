@@ -219,6 +219,18 @@ jobs:
             sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${PROJECT-NAME//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${OPTIMIZE-JAVA-OUTPUT//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_ALL            =/EXTRACT_ALL            =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PRIVATE        =/EXTRACT_PRIVATE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =/EXTRACT_PRIV_VIRTUAL   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PACKAGE        =/EXTRACT_PACKAGE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_STATIC         =/EXTRACT_STATIC         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =/EXTRACT_LOCAL_METHODS  =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =/EXTRACT_ANON_NSPACES   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/HIDE_SCOPE_NAMES       =/HIDE_SCOPE_NAMES       =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =/SHOW_GROUPED_MEMB_INC  =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/RECURSIVE              =/RECURSIVE              =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/REFERENCES_LINK_SOURCE =/REFERENCES_LINK_SOURCE =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/GENERATE_LATEX         =/GENERATE_LATEX         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
 
           fi
 
@@ -232,6 +244,7 @@ jobs:
           PROJECT-NAME: ${{ inputs.PROJECT_NAME }}
           OPTIMIZE-OUTPUT-JAVA: ${{ inputs.OPTIMIZE_OUTPUT_JAVA }}
           AUTOLINK-SUPPORT: ${{ inputs.AUTOLINK_SUPPORT }}
+          envINPUT: ${{ github.event.repository.name }}
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
