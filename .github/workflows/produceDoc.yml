@@ -3,8 +3,8 @@ name: 'single repo action test'
 on: 
   workflow_call:
     inputs:
-      Doxyfile:
-        default: "./Doxyfile"
+      Path-to-doxyfile:
+        default: ".github/runthedoc/Doxyfile"
         required: false
         type: string
         description: Path to where the Doxyfile is. (By default it should be at .github/runthedoc/Doxyfile)
@@ -189,7 +189,7 @@ jobs:
           cd ../app
           whoami
           ls -a
-           
+          FILE= $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
           if [ -f doxyshift/.github/runthedoc/Doxyfileb ];then
             echo "alright file is there"
           else
