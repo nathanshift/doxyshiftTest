@@ -199,7 +199,7 @@ jobs:
             else
               echo "input line not found"
             fi
-            sed -i "/^#/!s/INPUT                  =/etoile/g" doxyshift/.github/runthedoc/Doxyfile
+            sed -i "/^#/!s/INPUT                  =/INPUT                  =etoile $REPO_NAME/g" doxyshift/.github/runthedoc/Doxyfile
             cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
             #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} INPUT=$REPO_NAME/
           else
