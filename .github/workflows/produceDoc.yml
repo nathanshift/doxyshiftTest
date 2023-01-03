@@ -190,8 +190,10 @@ jobs:
           whoami
           ls -a
            
-          if [ -f doxyshift/.github/runthedoc/Doxyfile ];then
-            echo "alright"
+          if [ -f doxyshift/.github/runthedoc/Doxyfileb ];then
+            echo "alright file is there"
+          else
+            echo "File is not there"  
           fi
           cd doxyshift
           ls -a
