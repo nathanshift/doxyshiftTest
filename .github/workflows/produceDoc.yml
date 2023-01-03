@@ -190,7 +190,7 @@ jobs:
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
 
-          sed -i "/^#/!s/sample .*/etoileReplacedline $REPO_NAME /g" $REPO_NAME/.github/runthedoc/samplefile
+          sed -i "/^#/!s/sample .*/etoileReplacedline ${{ inputs.OUTPUT_DIRECTORY }} /g" $REPO_NAME/.github/runthedoc/samplefile
           cat doxyshift/.github/runthedoc/samplefile
 
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
@@ -205,7 +205,7 @@ jobs:
 
             sed -i "/^#/!s/INPUT                  =/INPUT                  = $REPO_NAME/g" doxyshift/.github/runthedoc/Doxyfile
 
-            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${{ inputs.OUTPUT_DIRECTORY }}/g" doxyshift/.github/runthedoc/Doxyfile
+            #sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${{ inputs.OUTPUT_DIRECTORY }}/g" doxyshift/.github/runthedoc/Doxyfile
             cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
             #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
           else
