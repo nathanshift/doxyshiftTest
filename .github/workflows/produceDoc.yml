@@ -189,9 +189,9 @@ jobs:
           cd ../app
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
-          output = ${{ inputs.OUTPUT_DIRECTORY }}
+          output = '${{ inputs.OUTPUT_DIRECTORY }}'
           echo $output
-          #sed -i "/^#/!s/sample .*/etoileReplacedline ${{ inputs.OUTPUT_DIRECTORY }} /g" $REPO_NAME/.github/runthedoc/samplefile
+          sed -i '/^#/!s/sample .*/etoileReplacedline ${{ inputs.OUTPUT_DIRECTORY }} /g' $REPO_NAME/.github/runthedoc/samplefile
           cat doxyshift/.github/runthedoc/samplefile
 
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
