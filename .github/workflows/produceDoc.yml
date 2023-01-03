@@ -26,7 +26,7 @@ on:
         type: string
 
       OUTPUT_DIRECTORY:
-        default: ./${{ github.event.repository.name }}/doc
+        default: ${{ github.event.repository.name }}/doc
         description: 'Test scenario tags'
         required: false 
         type: string
@@ -127,7 +127,7 @@ on:
                        Note: If this tag is empty the current directory is searched.
                        The default value is ./{{ github.event.repository.name }}'
         required: false
-        default: ./{{ github.event.repository.name }}
+        default: ${{ github.event.repository.name }}
         type: string
 
       RECURSIVE:
