@@ -189,7 +189,8 @@ jobs:
           cd ../app
           whoami
           ls -a 
-          if [ -f "$REPO_NAME/${{ inputs.Path-to-doxyfile }}" ];then
+          FILE = "$REPO_NAME/${{ inputs.Path-to-doxyfile }}"
+          if [ -f $FILE ];then
             echo "alright file is there"
           else
             echo "File is not there"  
