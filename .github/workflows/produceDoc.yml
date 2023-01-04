@@ -224,7 +224,7 @@ jobs:
             #sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =.*/OPTIMIZE_OUTPUT_JAVA   = ${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/AUTOLINK_SUPPORT       =.*/AUTOLINK_SUPPORT       = ${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_ALL            =.*/EXTRACT_ALL            = ${envEXTRACT_ALL//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_PRIVATE        =.*/EXTRACT_PRIVATE        = ${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PRIVATE        =.*/EXTRACT_PRIVATE        = ${envEXTRACT_PRIVATE//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =/EXTRACT_PRIV_VIRTUAL   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_PACKAGE        =/EXTRACT_PACKAGE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_STATIC         =/EXTRACT_STATIC         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
