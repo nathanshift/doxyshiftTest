@@ -217,22 +217,22 @@ jobs:
 
             #setting doxyfile configuration
             sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${envPROJECT_NAME//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_ALL            =/EXTRACT_ALL            =${envEXTRACT_ALL//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_PRIVATE        =/EXTRACT_PRIVATE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =/EXTRACT_PRIV_VIRTUAL   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_PACKAGE        =/EXTRACT_PACKAGE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_STATIC         =/EXTRACT_STATIC         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =/EXTRACT_LOCAL_METHODS  =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =/EXTRACT_ANON_NSPACES   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/HIDE_SCOPE_NAMES       =/HIDE_SCOPE_NAMES       =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =/SHOW_GROUPED_MEMB_INC  =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/RECURSIVE              =/RECURSIVE              =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/REFERENCES_LINK_SOURCE =/REFERENCES_LINK_SOURCE =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/GENERATE_LATEX         =/GENERATE_LATEX         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${envPROJECT_NAME//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_ALL            =/EXTRACT_ALL            =${envEXTRACT_ALL//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_PRIVATE        =/EXTRACT_PRIVATE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =/EXTRACT_PRIV_VIRTUAL   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_PACKAGE        =/EXTRACT_PACKAGE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_STATIC         =/EXTRACT_STATIC         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =/EXTRACT_LOCAL_METHODS  =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =/EXTRACT_ANON_NSPACES   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/HIDE_SCOPE_NAMES       =/HIDE_SCOPE_NAMES       =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =/SHOW_GROUPED_MEMB_INC  =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/RECURSIVE              =/RECURSIVE              =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/REFERENCES_LINK_SOURCE =/REFERENCES_LINK_SOURCE =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/GENERATE_LATEX         =/GENERATE_LATEX         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
 
             cat Doxyfile
           fi
