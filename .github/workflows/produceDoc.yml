@@ -231,8 +231,8 @@ jobs:
             #sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =.*/EXTRACT_LOCAL_METHODS  = ${envEXTRACT_LOCAL_METHODS//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =.*/EXTRACT_ANON_NSPACES   = ${envEXTRACT_ANON_NSPACES//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/HIDE_SCOPE_NAMES       =.*/HIDE_SCOPE_NAMES       = ${envHIDE_SCOPE_NAMES//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =.*/SHOW_GROUPED_MEMB_INC  = ${envSHOW_GROUPED_MEMB_INC//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/RECURSIVE              =.*/RECURSIVE              = ${envRECURSIVE//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =.*/SHOW_GROUPED_MEMB_INC  = ${envSHOW_GROUPED_MEMB_INC//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/RECURSIVE              =.*/RECURSIVE              = ${envRECURSIVE//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/REFERENCES_LINK_SOURCE =.*/REFERENCES_LINK_SOURCE = ${envREFERENCES_LINK_SOURCE//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/GENERATE_LATEX         =.*/GENERATE_LATEX         = ${envGENERATE_LATEX//\//\\/}/g" Doxyfile
 
