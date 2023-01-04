@@ -277,7 +277,9 @@ jobs:
           envHAVE_DOT: ${{ inputs.HAVE_DOT}}
           
       - name: Produce doc to Confluence
-        run:  pwd
+        run:  |
+            cd ../app
+            ls -a
 
       # - name: Run Parser for Confluence
       #   run:   
