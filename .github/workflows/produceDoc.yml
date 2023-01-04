@@ -218,8 +218,8 @@ jobs:
             doxygen -g Doxyfile
 
             #setting doxyfile configuration
-            sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${envPROJECT_NAME//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
