@@ -188,7 +188,7 @@ jobs:
         run: |
           cd ../app
           ls
-          dotnet DockerIt.dll
+          #dotnet DockerIt.dll
           cd $REPO_NAME/.github/runthedoc
           ls -a
 
@@ -280,7 +280,7 @@ jobs:
         run:  |
             cd ../app
             ls -a
-            dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
+            dotnet DockerIt.dll ${{ inputs.Parent-page-name }} ${{ inputs.Parent-page-description }}
 
       # - name: Run Parser for Confluence
       #   run:   
