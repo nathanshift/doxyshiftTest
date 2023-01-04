@@ -211,6 +211,8 @@ jobs:
             
             cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
             #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
+            doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }}
+
           else
             echo "File is not there. Creating new doxyfile" 
             doxygen -g Doxyfile
@@ -235,10 +237,11 @@ jobs:
             #sed -i "/^#/!s/GENERATE_LATEX         =/GENERATE_LATEX         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
 
             cat Doxyfile
+            #doxygen Doxyfile
           fi
 
 
-          doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }}
+          
           cd $envOUT_DIR
           ls -a
         shell: bash
