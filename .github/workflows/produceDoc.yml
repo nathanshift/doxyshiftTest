@@ -280,6 +280,7 @@ jobs:
         run:  |
             cd ../app
             ls -a
+            dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
 
       # - name: Run Parser for Confluence
       #   run:   
