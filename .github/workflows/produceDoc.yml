@@ -242,8 +242,8 @@ jobs:
 
 
           
-          cd $envOUT_DIR
-          ls -a
+          #cd $envOUT_DIR
+          #ls -a
         shell: bash
         env:
           envINPUT: ${{ github.event.repository.name }}
@@ -265,7 +265,7 @@ jobs:
           envGENERATE_LATEX: ${{ inputs.REFERENCES_LINK_SOURCE}}
           
       - name: Produce html
-        run: doxygen ${{ inputs.Doxyfile}}
+        run:  doxygen ${{ inputs.Doxyfile}}
 
       # - name: Run Parser for Confluence
       #   run:   
