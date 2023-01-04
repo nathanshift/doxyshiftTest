@@ -196,7 +196,7 @@ jobs:
         
         run: |
           cd ../app
-          dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
+          #dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
           echo $envOUT_DIR
           #sed -i "/^#/!s/sample .*/etoileReplacedline ${envOUT_DIR//\//\\/} /g" $REPO_NAME/.github/runthedoc/samplefile
