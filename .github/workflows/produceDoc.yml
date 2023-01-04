@@ -226,8 +226,8 @@ jobs:
             #sed -i "/^#/!s/EXTRACT_ALL            =.*/EXTRACT_ALL            = ${envEXTRACT_ALL//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_PRIVATE        =.*/EXTRACT_PRIVATE        = ${envEXTRACT_PRIVATE//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =.*/EXTRACT_PRIV_VIRTUAL   = ${envEXTRACT_PRIV_VIRTUAL//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_PACKAGE        =.*/EXTRACT_PACKAGE        = ${envEXTRACT_PACKAGE//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_STATIC         =.*/EXTRACT_STATIC         = ${envEXTRACT_STATIC//\//\\/}/g" Doxyfile
+            #sed -i "/^#/!s/EXTRACT_PACKAGE        =.*/EXTRACT_PACKAGE        = ${envEXTRACT_PACKAGE//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_STATIC         =.*/EXTRACT_STATIC         = ${envEXTRACT_STATIC//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =.*/EXTRACT_LOCAL_METHODS  = ${envEXTRACT_LOCAL_METHODS//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =.*/EXTRACT_ANON_NSPACES   = ${envEXTRACT_ANON_NSPACES//\//\\/}/g" Doxyfile
             #sed -i "/^#/!s/HIDE_SCOPE_NAMES       =.*/HIDE_SCOPE_NAMES       = ${envHIDE_SCOPE_NAMES//\//\\/}/g" Doxyfile
