@@ -189,9 +189,9 @@ jobs:
           cd ../app
           dotnet DockerIt.dll HiNathan ${{ inputs.Parent-page-name }}
           ls -a 
-          echo $OUT_DIR
-          #sed -i "/^#/!s/sample .*/etoileReplacedline ${OUT_DIR//\//\\/} /g" $REPO_NAME/.github/runthedoc/samplefile
-          #sed -i "/^#/!s/sample .*/etoileReplacedline $OUT_DIR /g" $REPO_NAME/.github/runthedoc/samplefile
+          echo $envOUT_DIR
+          #sed -i "/^#/!s/sample .*/etoileReplacedline ${envOUT_DIR//\//\\/} /g" $REPO_NAME/.github/runthedoc/samplefile
+          #sed -i "/^#/!s/sample .*/etoileReplacedline $envOUT_DIR /g" $REPO_NAME/.github/runthedoc/samplefile
           cat doxyshift/.github/runthedoc/samplefile
 
           if [ -f $REPO_NAME/${{ inputs.Path-to-doxyfile }} ];then
@@ -204,9 +204,11 @@ jobs:
               echo "input line not found"
             fi
 
-            sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" doxyshift/.github/runthedoc/Doxyfile
-
-            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${OUT_DIR//\//\\/}/g" doxyshift/.github/runthedoc/Doxyfile
+            #sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" doxyshift/.github/runthedoc/Doxyfile
+            #sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" doxyshift/.github/runthedoc/Doxyfile
+            sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" $REPO_NAME/${{ inputs.Path-to-Doxyfile }}
+            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" $REPO_NAME/${{ inputs.Path-to-Doxyfile }}
+            
             cat $REPO_NAME/${{ inputs.Path-to-doxyfile }}
             #doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }} 
           else
@@ -215,11 +217,11 @@ jobs:
 
             #setting doxyfile configuration
             sed -i "/^#/!s/INPUT                  =/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${OUT_DIR//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${PROJECT-NAME//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${OPTIMIZE-JAVA-OUTPUT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
-            sed -i "/^#/!s/EXTRACT_ALL            =/EXTRACT_ALL            =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/PROJECT_NAME           =/PROJECT_NAME           =${envPROJECT_NAME//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =/OPTIMIZE_OUTPUT_JAVA   =${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/AUTOLINK_SUPPORT       =/AUTOLINK_SUPPORT       =${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_ALL            =/EXTRACT_ALL            =${envEXTRACT_ALL//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/EXTRACT_PRIVATE        =/EXTRACT_PRIVATE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =/EXTRACT_PRIV_VIRTUAL   =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/EXTRACT_PACKAGE        =/EXTRACT_PACKAGE        =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
@@ -236,15 +238,28 @@ jobs:
 
 
           doxygen $REPO_NAME/${{ inputs.Path-to-doxyfile }}
-          cd $OUT_DIR
+          cd $envOUT_DIR
           ls -a
         shell: bash
         env:
-          OUT_DIR: ${{ inputs.OUTPUT_DIRECTORY }}
-          PROJECT-NAME: ${{ inputs.PROJECT_NAME }}
-          OPTIMIZE-OUTPUT-JAVA: ${{ inputs.OPTIMIZE_OUTPUT_JAVA }}
-          AUTOLINK-SUPPORT: ${{ inputs.AUTOLINK_SUPPORT }}
           envINPUT: ${{ github.event.repository.name }}
+          envOUT_DIR: ${{ inputs.OUTPUT_DIRECTORY }}
+          envPROJECT_NAME: ${{ inputs.PROJECT_NAME }}
+          envOPTIMIZE_OUTPUT_JAVA: ${{ inputs.OPTIMIZE_OUTPUT_JAVA }}
+          envAUTOLINK_SUPPORT: ${{ inputs.AUTOLINK_SUPPORT }}
+          envEXTRACT_ALL: ${{ inputs.EXTRACT_ALL }}
+          envEXTRACT_PRIVATE: ${{ inputs.EXTRACT_PRIVATE }}
+          envEXTRACT_PRIV_VIRTUAL: ${{ inputs.EXTRACT_PRIV_VIRTUAL }}
+          envEXTRACT_PACKAGE: ${{ inputs.EXTRACT_PACKAGE }}
+          envEXTRACT_STATIC: ${{ inputs.EXTRACT_STATIC }}
+          envEXTRACT_LOCAL_METHODS: ${{ inputs.EXTRACT_LOCAL_METHODS}}
+          envEXTRACT_ANON_NSPACES: ${{ inputs.EXTRACT_ANON_NSPACES}}
+          envHIDE_SCOPE_NAMES: ${{ inputs.HIDE_SCOPE_NAMES}}
+          envSHOW_GROUPED_MEMB_INC: ${{ inputs.SHOW_GROUPED_MEMB_INC}}
+          envRECURSIVE: ${{ inputs.RECURSIVE}}
+          envREFERENCES_LINK_SOURCE: ${{ inputs.REFERENCES_LINK_SOURCE}}
+          envGENERATE_LATEX: ${{ inputs.REFERENCES_LINK_SOURCE}}
+          
       - name: Produce html
         run: doxygen ${{ inputs.Doxyfile}}
 
