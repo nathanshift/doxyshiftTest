@@ -218,32 +218,32 @@ jobs:
             doxygen -g Doxyfile
 
             #setting doxyfile configuration
-            #sed -i "/^#/!s/INPUT                  =.*/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/OUTPUT_DIRECTORY       =.*/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/PROJECT_NAME           =.*/PROJECT_NAME           = ${envPROJECT_NAME//\//\\/} Documentation/g" Doxyfile
-            #sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =.*/OPTIMIZE_OUTPUT_JAVA   = ${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/AUTOLINK_SUPPORT       =.*/AUTOLINK_SUPPORT       = ${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_ALL            =.*/EXTRACT_ALL            = ${envEXTRACT_ALL//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_PRIVATE        =.*/EXTRACT_PRIVATE        = ${envEXTRACT_PRIVATE//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =.*/EXTRACT_PRIV_VIRTUAL   = ${envEXTRACT_PRIV_VIRTUAL//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_PACKAGE        =.*/EXTRACT_PACKAGE        = ${envEXTRACT_PACKAGE//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_STATIC         =.*/EXTRACT_STATIC         = ${envEXTRACT_STATIC//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =.*/EXTRACT_LOCAL_METHODS  = ${envEXTRACT_LOCAL_METHODS//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =.*/EXTRACT_ANON_NSPACES   = ${envEXTRACT_ANON_NSPACES//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/HIDE_SCOPE_NAMES       =.*/HIDE_SCOPE_NAMES       = ${envHIDE_SCOPE_NAMES//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =.*/SHOW_GROUPED_MEMB_INC  = ${envSHOW_GROUPED_MEMB_INC//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/RECURSIVE              =.*/RECURSIVE              = ${envRECURSIVE//\//\\/}/g" Doxyfile
-            #sed -i "/^#/!s/REFERENCES_LINK_SOURCE =.*/REFERENCES_LINK_SOURCE = ${envREFERENCES_LINK_SOURCE//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/INPUT                  =.*/INPUT                  = ${REPO_NAME//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/OUTPUT_DIRECTORY       =.*/OUTPUT_DIRECTORY       = ${envOUT_DIR//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/PROJECT_NAME           =.*/PROJECT_NAME           = ${envPROJECT_NAME//\//\\/} Documentation/g" Doxyfile
+            sed -i "/^#/!s/OPTIMIZE_OUTPUT_JAVA   =.*/OPTIMIZE_OUTPUT_JAVA   = ${envOPTIMIZE_OUTPUT_JAVA//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/AUTOLINK_SUPPORT       =.*/AUTOLINK_SUPPORT       = ${envAUTOLINK_SUPPORT//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_ALL            =.*/EXTRACT_ALL            = ${envEXTRACT_ALL//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PRIVATE        =.*/EXTRACT_PRIVATE        = ${envEXTRACT_PRIVATE//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PRIV_VIRTUAL   =.*/EXTRACT_PRIV_VIRTUAL   = ${envEXTRACT_PRIV_VIRTUAL//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_PACKAGE        =.*/EXTRACT_PACKAGE        = ${envEXTRACT_PACKAGE//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_STATIC         =.*/EXTRACT_STATIC         = ${envEXTRACT_STATIC//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_LOCAL_METHODS  =.*/EXTRACT_LOCAL_METHODS  = ${envEXTRACT_LOCAL_METHODS//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/EXTRACT_ANON_NSPACES   =.*/EXTRACT_ANON_NSPACES   = ${envEXTRACT_ANON_NSPACES//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/HIDE_SCOPE_NAMES       =.*/HIDE_SCOPE_NAMES       = ${envHIDE_SCOPE_NAMES//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/SHOW_GROUPED_MEMB_INC  =.*/SHOW_GROUPED_MEMB_INC  = ${envSHOW_GROUPED_MEMB_INC//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/RECURSIVE              =.*/RECURSIVE              = ${envRECURSIVE//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/REFERENCES_LINK_SOURCE =.*/REFERENCES_LINK_SOURCE = ${envREFERENCES_LINK_SOURCE//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/GENERATE_LATEX         =.*/GENERATE_LATEX         = ${envGENERATE_LATEX//\//\\/}/g" Doxyfile
 
             cat Doxyfile
-            #doxygen Doxyfile
+            doxygen Doxyfile
           fi
 
 
           
-          #cd $envOUT_DIR
-          #ls -a
+          cd $envOUT_DIR
+          ls -a
         shell: bash
         env:
           envINPUT: ${{ github.event.repository.name }}
