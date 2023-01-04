@@ -234,6 +234,7 @@ jobs:
             sed -i "/^#/!s/REFERENCES_LINK_SOURCE =/REFERENCES_LINK_SOURCE =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/GENERATE_LATEX         =/GENERATE_LATEX         =${AUTOLINK-SUPPORT//\//\\/}/g" Doxyfile
 
+            cat Doxyfile
           fi
 
 
