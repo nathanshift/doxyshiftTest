@@ -151,6 +151,15 @@ on:
         required: false
         default: 'NO' 
         type: string
+
+      HAVE_DOT:
+        description: 'If you set the HAVE_DOT tag to YES then the dot tool is assumed to be available from the path. 
+                      This tool is part of Graphviz (see: http://www.graphviz.org/), a graph visualization toolkit from 
+                      AT&T and Lucent Bell Labs. The other options in this section have no effect if this option is set to NO
+                      The default value is: NO.'
+        required: false
+        default: 'NO' 
+        type: string
       
 
 
@@ -235,6 +244,7 @@ jobs:
             sed -i "/^#/!s/RECURSIVE              =.*/RECURSIVE              = ${envRECURSIVE//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/REFERENCES_LINK_SOURCE =.*/REFERENCES_LINK_SOURCE = ${envREFERENCES_LINK_SOURCE//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/GENERATE_LATEX         =.*/GENERATE_LATEX         = ${envGENERATE_LATEX//\//\\/}/g" Doxyfile
+            sed -i "/^#/!s/HAVE_DOT               =.*/HAVE_DOT               = ${envHAVE_DOT//\//\\/}/g" Doxyfile
 
             cat Doxyfile
             doxygen Doxyfile
@@ -264,6 +274,7 @@ jobs:
           envRECURSIVE: ${{ inputs.RECURSIVE}}
           envREFERENCES_LINK_SOURCE: ${{ inputs.REFERENCES_LINK_SOURCE}}
           envGENERATE_LATEX: ${{ inputs.REFERENCES_LINK_SOURCE}}
+          envHAVE_DOT: ${{ inputs.HAVE_DOT}}
           
       - name: Produce html
         run:  doxygen ${{ inputs.Doxyfile}}
