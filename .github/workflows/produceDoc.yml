@@ -238,12 +238,13 @@ jobs:
 
             cat Doxyfile
             doxygen Doxyfile
+            cd $envOUT_DIR
+            ls -a
           fi
 
 
           
-          cd $envOUT_DIR
-          ls -a
+          
         shell: bash
         env:
           envINPUT: ${{ github.event.repository.name }}
