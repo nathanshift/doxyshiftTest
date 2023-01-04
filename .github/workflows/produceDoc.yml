@@ -276,8 +276,8 @@ jobs:
           envGENERATE_LATEX: ${{ inputs.REFERENCES_LINK_SOURCE}}
           envHAVE_DOT: ${{ inputs.HAVE_DOT}}
           
-      - name: Produce html
-        run:  doxygen ${{ inputs.Doxyfile}}
+      - name: Produce doc to Confluence
+        run:  pwd
 
       # - name: Run Parser for Confluence
       #   run:   
