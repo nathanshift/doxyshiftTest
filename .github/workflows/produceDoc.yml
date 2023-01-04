@@ -246,7 +246,7 @@ jobs:
             sed -i "/^#/!s/GENERATE_LATEX         =.*/GENERATE_LATEX         = ${envGENERATE_LATEX//\//\\/}/g" Doxyfile
             sed -i "/^#/!s/HAVE_DOT               =.*/HAVE_DOT               = ${envHAVE_DOT//\//\\/}/g" Doxyfile
 
-            cat Doxyfile
+            #cat Doxyfile
             doxygen Doxyfile
             cd $envOUT_DIR
             ls -a
