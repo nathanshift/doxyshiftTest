@@ -14,10 +14,17 @@ on:
         type: string
         description: Optional name for the parent page under which the documentation will leave. (By default the current repository name will be used)
       Parent-page-description:
-        defaut: This page contains the code documentation for <a href="https://github.com/shift-technology/${{ github.event.repository.name }}">${{ github.event.repository.name }}</a>
         required: false
         type: string
         description: Parent page description for what the documentation for the current repository is all about.
+
+      Default-parent-page-description:
+        defaut: <p>This page contains the code documentation for <a href="https://github.com/shift-technology/${{ github.event.repository.name }}">${{ github.event.repository.name }}</a></p>
+        required: false
+        type: string
+        description: Parent page description for what the documentation for the current repository is all about.
+      
+      
       
 
       PROJECT_NAME:
@@ -27,13 +34,13 @@ on:
         type: string
 
       OUTPUT_DIRECTORY:
-        default: ${{ github.event.repository.name }}/doc
+        default: ${{ github.event.repository.name }}/docyshift
         description: 'Test scenario tags'
         required: false 
         type: string
 
       OPTIMIZE_OUTPUT_JAVA:
-        description: 'If C# code should be documented. Yes the Java is not a mistake :) '
+        description: 'If C# code should be documented. Yes the JAVA is not a mistake :) '
         required: false
         default: 'YES' 
         type: string
