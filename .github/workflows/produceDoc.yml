@@ -24,7 +24,7 @@ on:
         type: string
         description: Parent page description for what the documentation for the current repository is all about.     
       Custom-parent-page-name:
-        default: " "
+        default: ''
         required: false
         type: string
         description: Custom name for the parent page under which the documentation will leave.
