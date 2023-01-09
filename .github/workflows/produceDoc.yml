@@ -18,13 +18,11 @@ on:
         required: false
         type: string
         description: Parent page description for what the documentation for the current repository is all about.
-
       Default-parent-page-description:
         default: '<p>This page contains the code documentation for <a href="https://github.com/shift-technology/${{ github.event.repository.name }}">${{ github.event.repository.name }}</a></p>'
         required: false
         type: string
-        description: Parent page description for what the documentation for the current repository is all about.
-      
+        description: Parent page description for what the documentation for the current repository is all about.     
       Custom-parent-page-name:
         default: " "
         required: false
@@ -32,9 +30,6 @@ on:
         description: Custom name for the parent page under which the documentation will leave.
 
 
-      
-      
-      
 
       PROJECT_NAME:
         description: 'Name of the project. Can be the same as Parent-page-name'
