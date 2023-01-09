@@ -34,7 +34,7 @@ on:
         type: string
 
       OUTPUT_DIRECTORY:
-        default: ${{ github.event.repository.name }}/docyshift/html
+        default: ${{ github.event.repository.name }}/doc
         description: 'Test scenario tags'
         required: false 
         type: string
@@ -288,7 +288,7 @@ jobs:
         run:  |
             cd ../app
             ls -a
-            dotnet HtmlParse.dll ${{ inputs.OUTPUT_DIRECTORY }} ${{ inputs.Default-parent-page-description }} ${{ inputs.Parent-page-description }}
+            dotnet HtmlParse.dll '${{ inputs.OUTPUT_DIRECTORY }}/html' ${{ inputs.Default-parent-page-description }} ${{ inputs.Parent-page-description }}
         shell: bash
 
       # - name: Run Parser for Confluence
