@@ -25,6 +25,14 @@ on:
         type: string
         description: Parent page description for what the documentation for the current repository is all about.
       
+      Custom-parent-page-name:
+        default: " "
+        required: false
+        type: string
+        description: Custom name for the parent page under which the documentation will leave.
+
+
+      
       
       
 
@@ -289,7 +297,7 @@ jobs:
         run:  |
             cd ../app
             ls -a
-            dotnet HtmlParse.dll ${{ inputs.OUTPUT_DIRECTORY }}/html '${{ inputs.Default-parent-page-description }}' ${{ inputs.Parent-page-description }}
+            dotnet HtmlParse.dll ${{ inputs.OUTPUT_DIRECTORY }}/html ${{ inputs.Parent-page-name }} '${{ inputs.Default-parent-page-description }}' ${{ inputs.Parent-page-description }} ${{ inputs.Custom-parent-page-name }}
         shell: bash
 
       # - name: Run Parser for Confluence
