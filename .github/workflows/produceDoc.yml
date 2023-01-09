@@ -19,7 +19,7 @@ on:
         description: Parent page description for what the documentation for the current repository is all about.
 
       Default-parent-page-description:
-        default: <p>This page contains the code documentation for <a href="https://github.com/shift-technology/${{ github.event.repository.name }}">${{ github.event.repository.name }}</a></p>
+        default: '<p>This page contains the code documentation for <a href="https://github.com/shift-technology/${{ github.event.repository.name }}">${{ github.event.repository.name }}</a></p>'
         required: false
         type: string
         description: Parent page description for what the documentation for the current repository is all about.
@@ -34,7 +34,7 @@ on:
         type: string
 
       OUTPUT_DIRECTORY:
-        default: ${{ github.event.repository.name }}/docyshift
+        default: ${{ github.event.repository.name }}/docyshift/html
         description: 'Test scenario tags'
         required: false 
         type: string
